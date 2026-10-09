@@ -1,0 +1,34 @@
+-- Band / album artwork for concert cards (sourced via iTunes Search API).
+-- Safe to re-run. App also resolves images in src/lib/bandImages.ts without this.
+
+alter table public.events
+  add column if not exists image_url text;
+
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/09/70/d0/0970d0fa-a46d-049b-125c-d131171fce1c/603497877393.jpg/600x600bb.jpg' where band_name = 'Deep Purple';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/26/47/66/264766c6-63ca-e46a-348c-d6984c76ab96/25UM1IM19715.rgb.jpg/600x600bb.jpg' where band_name = 'The Devil Wears Prada';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/29/9f/5c/299f5c90-34e6-221a-5656-92326258a4fd/cover.jpg/600x600bb.jpg' where band_name = 'Hämatom';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/17/42/2b/17422b02-e17a-5346-f184-4973ca24da91/603497859276.jpg/600x600bb.jpg' where band_name = 'Simple Plan';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/78/09/a3/7809a3da-4b9f-2804-3e0e-1b96036fc2f5/039841900422.jpg/600x600bb.jpg' where band_name = 'Behemoth';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0c/8f/b3/0c8fb320-3ae5-90b7-8e69-4a226a885d1d/ticket.wbhgabux.jpg/600x600bb.jpg' where band_name = 'Uriah Heep';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/53/0e/f1/530ef1aa-a25b-69d0-8a7c-99219739e745/cover.jpg/600x600bb.jpg' where band_name = 'Beast In Black';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/47/a5/eb/47a5eb17-fea0-2146-cec8-c19316ec09ea/191018546021.jpg/600x600bb.jpg' where band_name = 'Gloryhammer';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/2e/8e/08/2e8e0859-c522-a825-93fa-2db9c7524f38/dj.lcoxyovc.jpg/600x600bb.jpg' where band_name = 'Shinedown';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b3/12/b1/b312b1ab-dd87-f2cd-76ec-cccb47e24b68/mzi.jovnkxll.jpg/600x600bb.jpg' where band_name = 'Amon Amarth';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6f/b8/ac/6fb8ac4c-8609-a77c-d0e3-d8b32f90e7e0/00075021322523.rgb.jpg/600x600bb.jpg' where band_name = 'Nazareth';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/09/2b/e7/092be7d0-7697-220d-c000-97f366e723e4/mzi.anacpwuj.jpg/600x600bb.jpg' where band_name = 'Korn';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/97/97/21979705-e1c7-75f6-7634-e0815c0f86b6/16CRGIM00102.rgb.jpg/600x600bb.jpg' where band_name = 'The Pretty Reckless';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/84/2c/b4/842cb419-243c-b3f4-4da9-b6b980996062/22UMGIM67371.rgb.jpg/600x600bb.jpg' where band_name = 'Currents';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/de/8e/00/de8e00f9-07c3-e0be-d830-b205b9b3de11/cover.jpg/600x600bb.jpg' where band_name = 'Eluveitie';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/99/f2/4e/99f24eba-4414-5f6f-d9c7-5ccdd3809433/15UMGIM34100.rgb.jpg/600x600bb.jpg' where band_name = 'Papa Roach';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/f9/31/3f/f9313fc5-8880-95f4-b977-2a0be8df1333/4050538818703.jpg/600x600bb.jpg' where band_name = 'Polyphia';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/aa/0c/e4/aa0ce422-3cf4-c31a-6564-90e544bef20c/26CRGIM54851.rgb.jpg/600x600bb.jpg' where band_name = 'Chelsea Wolfe';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/73/ec/cd/73eccdae-929c-2e18-e7d4-6848b319e371/5400863104764_cover.jpg/600x600bb.jpg' where band_name = 'Dayseeker';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/6d/9c/4c/6d9c4ca8-405b-d2a8-d5e9-b78ceafcde58/888295542067.jpg/600x600bb.jpg' where band_name = 'Mean Messiah';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/a3/ed/0e/a3ed0e70-1388-07b0-eb03-b6a7583a8b96/198500190816.jpg/600x600bb.jpg' where band_name = 'Syridas';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/31/b2/cb/31b2cbd5-7ba5-1c9d-06be-f69d979c655f/20271.jpg/600x600bb.jpg' where band_name = 'The Risen Dread';
+update public.events set image_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b2/f1/51/b2f151e7-e06f-aeae-9c5f-910583874267/cover.jpg/600x600bb.jpg' where band_name = 'Dimmu Borgir';
+
+-- Local / demo acts: concert crowd photo (Unsplash)
+update public.events set image_url = 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80'
+  where band_name in ('Local Heroes Praha', 'Kabinet Crew', 'Barrák Allstars')
+     or image_url is null;

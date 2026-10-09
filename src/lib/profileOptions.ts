@@ -1,0 +1,45 @@
+export const CITIES = [
+  "Praha",
+  "Brno",
+  "Ostrava",
+  "Zlín",
+  "Hradec Králové",
+  "Liberec",
+  "Plzeň",
+] as const;
+
+export const GENRE_OPTIONS = [
+  "Hard Rock",
+  "Heavy Metal",
+  "Thrash Metal",
+  "Death Metal",
+  "Melodic Death Metal",
+  "Black Metal",
+  "Doom Metal",
+  "Power Metal",
+  "Folk Metal",
+  "Progressive Metal",
+  "Industrial Metal",
+  "Nu Metal",
+  "Metalcore",
+  "Groove Metal",
+  "Punk",
+  "Pop Punk",
+  "Hardcore",
+  "Post-Hardcore",
+] as const;
+
+export const BAND_SUGGESTIONS = [
+  "Behemoth",
+  "Korn",
+  "Amon Amarth",
+  "Gloryhammer",
+  "Beast In Black",
+  "Eluveitie",
+  "Deep Purple",
+  "Shinedown",
+  "Papa Roach",
+  "Chelsea Wolfe",
+  "Mean Messiah",
+  "Hämatom",
+] as const;

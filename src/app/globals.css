@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #f4f4f5;
+  --crimson: #b91c1c;
+  --surface: #09090b;
+  --surface-elevated: #18181b;
+  --discord-sidebar: #1a1b1e;
+  --discord-main: #313338;
+  --discord-members: #2b2d31;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-crimson: var(--crimson);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Comfortable tap targets on mobile sheets */
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Horizontal rows scroll without a visible bar */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Shared focus / radius chrome */
+:focus-visible {
+  outline-color: var(--crimson);
+}
+
+/* Purposeful motion — rail cards, sheets, channel tabs */
+@keyframes sheet-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes feed-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sheet-enter {
+    animation: sheet-up 0.22s ease-out;
+  }
+
+  .rail-card {
+    animation: fade-in 0.35s ease-out both;
+  }
+
+  .rail-card:nth-child(2) {
+    animation-delay: 0.04s;
+  }
+  .rail-card:nth-child(3) {
+    animation-delay: 0.08s;
+  }
+  .rail-card:nth-child(4) {
+    animation-delay: 0.12s;
+  }
+
+  .feed-card {
+    animation: feed-in 0.28s ease-out both;
+  }
+
+  .channel-tab {
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  .channel-tab[aria-selected="true"] {
+    box-shadow: inset 0 -2px 0 var(--crimson);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet-enter,
+  .rail-card {
+    animation: none;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #18181b 0%,
+    #27272a 40%,
+    #18181b 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+.empty-rail {
+  animation: fade-in 0.3s ease-out;
+}
